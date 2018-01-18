@@ -1,0 +1,71 @@
+TextWindow.WriteLine("Input the number you wish to convert to a 8bit binary value")
+start:
+number = TextWindow.ReadNumber()
+TextWindow.WriteLine(number)
+OGnumber = number
+TextWindow.Clear()
+If number >= 128 Then
+  bit[1] = "1"
+  number = number - 128
+Else
+  bit[1] = "0"
+EndIf
+  
+If number >= 64 Then
+  bit[2] = "1"
+  number = number - 64
+Else
+  bit[2] = "0"
+EndIf
+
+If number >= 32 Then
+  bit[3] = "1"
+  number = number - 32
+Else
+  bit[3] = "0"
+EndIf
+
+If number >= 16 Then
+  bit[4] = "1"
+  number = number - 16
+Else
+  bit[4] = "0"
+EndIf
+
+If number >= 8 Then
+  bit[5] = "1"
+  number = number - 8
+Else
+  bit[5] = "0"
+EndIf
+
+If number >= 4 Then
+  bit[6] = "1"
+  number = number - 4
+Else
+  bit[6] = "0"
+EndIf
+
+If number >= 2 Then
+  bit[7] = "1"
+  number = number - 2
+Else
+  bit[7] = "0"
+EndIf
+
+If number >= 1 Then
+  bit[8] = "1"
+  number = number - 1
+Else
+  bit[8] = "0"
+EndIf
+
+If number = 0 Then
+  TextWindow.WriteLine(OGnumber + " is " + bit[1] + "," + bit[2] + "," + bit[3] + "," + bit[4] + "," + bit[5] + "," + bit[6] + "," + bit[7] + "," + bit[8] + " in binary" )
+  TextWindow.WriteLine("Input a new number if you wish to covert another")
+  Goto start
+Else
+  TextWindow.WriteLine("Oh dear that number won't fit a 8bit binary value try a smaller number smaller than 255")
+  Goto start
+EndIf
+  
